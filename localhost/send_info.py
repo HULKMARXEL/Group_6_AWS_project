@@ -5,7 +5,7 @@ import requests
 
 url = 'https://BT66EPW32IRIOCFX.anvil.app/_/private_api/GAFUXPPCWMB5WN52G4LWMXSI/upload'
 
-def send_info(decibel):
+def send_info(info):
     # datetime object containing current date and time
     now = datetime.now()
 
@@ -14,9 +14,9 @@ def send_info(decibel):
 
     body = json.dumps({
         "datetime": dt_string,
-        "decibel": decibel,
-        'location':'vivo_city',
-        'no_of_ppl':2   
+        "decibel": info["decibel"],
+        "location": "singapore_hdb_420_69",
+        "no_of_ppl": info["persons"]
     })
 
     

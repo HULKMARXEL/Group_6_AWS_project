@@ -1,7 +1,7 @@
 import time, math, audioop
 import pyaudio
 
-from camera import take_picture
+from camera import take_picture, delete_picture
 
 from rekognition import analyze_photo
 
@@ -35,11 +35,14 @@ while True:
 
     #any scaling factor
     total = math.log(total)
-    print(total)
 
-    if total > 15:
+    if total > 11:
         pic_path = take_picture()
 
         info = analyze_photo(pic_path)
 
-        send_info(total, info)
+        info['decibel'] = total
+
+        send_info(info)
+
+        delete_picture(pic_path)

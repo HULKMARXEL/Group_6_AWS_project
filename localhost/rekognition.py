@@ -23,8 +23,8 @@ def analyze_photo(photo, verbose=False):
     party = list(filter(lambda label : label['Name'] == 'Party', response['Labels']))
     
     return {
-        'Persons': len(persons[0]['Instances']) if len(persons) > 0 else 0,
-        'Party': party[0]['Confidence'] if len(party) > 0 else 0
+        'persons': len(persons[0]['Instances']) if len(persons) > 0 else 0,
+        'party': party[0]['Confidence'] if len(party) > 0 else 0
     }
 
 def main(photo):
