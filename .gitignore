@@ -1,2 +1,5 @@
 .env
 pics/*
+__pycache__/
+*.py[cod]
+store.csv

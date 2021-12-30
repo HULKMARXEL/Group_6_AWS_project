@@ -14,5 +14,5 @@ def upload_to_aws(local_file, bucket, s3_file):
         print("Credentials not available")
         return False
 
-
-uploaded = upload_to_aws('Screenshot (288).png', 'group-6-marxel-pictures', 'test.png')
+if __name__ == "__main__":
+    uploaded = upload_to_aws('Screenshot (288).png', 'group-6-marxel-pictures', 'test.png')
